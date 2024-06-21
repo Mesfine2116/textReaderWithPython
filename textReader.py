@@ -10,6 +10,16 @@ from colorama import Fore, Style, init
 # Initializing the colorama
 init()
 
+
+
+def read_file(file_path):
+    try:
+        with open(file_path,'r',encoding='utf-8') as file:
+            return file.readLines()
+    except Exception as e:
+        print(Fore.RED + f"Error reading file:{e}" + Style.RESET_ALL)
+        return None
+
 def clean_text(text):
     # Removing punctuation while keeping the Unicode characters
     punctuations = string.punctuation + '።፣፤፥፦፧'    #it will filter all the punctuations including the punctuation found in amharic language such as ። ፣ ፤ ፥ ፦ ፧
