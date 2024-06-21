@@ -14,6 +14,15 @@ init()
 
 
 
+def word_frequency(text_lines):
+    words = []
+    for line in text_lines:
+        clean_line = clean_text(line)
+        words.extend(clean_line.split())
+    
+    word_count = Counter(words)
+    return word_count.most_common()
+
 
 
 
