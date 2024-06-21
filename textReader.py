@@ -32,7 +32,11 @@ def word_frequency(text_lines):
     return word_count.most_common()
 
 
-
+def char_frequency(text_lines):
+    text = ''.join(text_lines)
+    text = clean_text(text)
+    char_count = Counter(text.replace(" ", ""))
+    return char_count.most_common(5)
 
 
 
