@@ -31,7 +31,6 @@ def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-
 def word_frequency(text_lines):
     words = []
     for line in text_lines:
@@ -48,13 +47,33 @@ def char_frequency(text_lines):
     char_count = Counter(text.replace(" ", ""))
     return char_count.most_common(5)
 
+def list_text_files():
+    return [f for f in os.listdir() if f.endswith('.txt')]
 
-
-
-
-
-
+def display_results(file_path):
+    text_lines = read_file(file_path)
+    if text_lines is None:
+        return
     
+    print(Fore.CYAN + "\nAnalyzing file:", file_path + Style.RESET_ALL)
+    
+    word_freq = word_frequency(text_lines)
+    print(Fore.GREEN + "\nWord Frequency (in decreasing order):" + Style.RESET_ALL)
+    print(tabulate(word_freq, headers=['Word', 'Frequency'], tablefmt='pretty'))
+    
+    char_freq = char_frequency(text_lines)
+    print(Fore.GREEN + "\nTop 5 Character Frequency:" + Style.RESET_ALL)
+    print(tabulate(char_freq, headers=['Character', 'Frequency'], tablefmt='pretty'))
+    
+    total_lines, total_words, total_characters = text_statistics(text_lines)
+    stats = [
+        ["Total Lines", total_lines],
+        ["Total Words", total_words],
+        ["Total Characters", total_characters]
+    ]
+    print(Fore.GREEN + "\nText Statistics:" + Style.RESET_ALL)
+    print(tabulate(stats, tablefmt='pretty'))
+
 
 def about_developer():
     developers = [
