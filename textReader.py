@@ -10,14 +10,12 @@ from colorama import Fore, Style, init
 # Initializing the colorama
 init()
 
-
-
 def read_file(file_path):
     try:
-        with open(file_path,'r',encoding='utf-8') as file:
-            return file.readLines()
+        with open(file_path, 'r', encoding='utf-8') as file:
+            return file.readlines()
     except Exception as e:
-        print(Fore.RED + f"Error reading file:{e}" + Style.RESET_ALL)
+        print(Fore.RED + f"Error reading file: {e}" + Style.RESET_ALL)
         return None
 
 def clean_text(text):
@@ -25,11 +23,6 @@ def clean_text(text):
     punctuations = string.punctuation + '።፣፤፥፦፧'    #it will filter all the punctuations including the punctuation found in amharic language such as ። ፣ ፤ ፥ ፦ ፧
     translator = str.maketrans('', '', punctuations)
     return text.translate(translator)
-
-
-def clear_console():
-    os.system('cls' if os.name == 'nt' else 'clear')
-
 
 def word_frequency(text_lines):
     words = []
@@ -39,7 +32,6 @@ def word_frequency(text_lines):
     
     word_count = Counter(words)
     return word_count.most_common()
-
 
 def char_frequency(text_lines):
     text = ''.join(text_lines)
@@ -80,6 +72,9 @@ def display_results(file_path):
     print(Fore.GREEN + "\nText Statistics:" + Style.RESET_ALL)
     print(tabulate(stats, tablefmt='pretty'))
 
+def clear_console():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    
 
 def about_developer():
     developers = [
