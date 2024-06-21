@@ -1,0 +1,20 @@
+Problem : Question 1
+______________________________________________________________________________________
+Write python program that will read a text file (with at least 10 lines) & perform the
+following tasks:
+
+⁂ Identify words in the text (it is better to remove special characters like semicolon,
+comma, full stop, etc. since they are not part of meaningful words)
+
+⁂ Create a function that compute word frequency in the text file & displays words in
+decreasing order of their frequency.
+
+⁂ Create a function that compute character frequency in the text file & displays the
+first five most frequently occurring characters.
+
+⁂ Finally output statistical information such as total lines, total words & total
+characters in the text file.
+
+Note that, Use text written in local languages(Amharic) for a plus mark
+
+______________________________________________________________________________________
