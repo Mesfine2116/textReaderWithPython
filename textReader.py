@@ -10,7 +10,15 @@ from colorama import Fore, Style, init
 # Initializing the colorama
 init()
 
+def clean_text(text):
+    # Removing punctuation while keeping the Unicode characters
+    punctuations = string.punctuation + '።፣፤፥፦፧'    #it will filter all the punctuations including the punctuation found in amharic language such as ። ፣ ፤ ፥ ፦ ፧
+    translator = str.maketrans('', '', punctuations)
+    return text.translate(translator)
 
+
+def clear_console():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 
