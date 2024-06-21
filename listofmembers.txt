@@ -1,0 +1,14 @@
+Department Of SOFTWARE ENGINEERING
+Course Title: Artificial Inteligence
+Team: 1
+
+ _____________________________________
+["No."|    "Name"           |   "ID"  ],
+[_____|_____________________|_________]
+["1"  |"Mesfin Aychiluhum"  |"1401775"],
+["2"  |"Mhiret Kiros     "  |"1401795"],
+["3"  |"Elsa Abera       "  |"1402648"],
+["4"  |"Danawit Tarekegn "  |"1401100"],
+["5"  |"Abigiya Elias    "  |"1500002"],
+["6"  |"Daniel Baye      "  |"1401105"],
+[_____|_____________________|_________]
