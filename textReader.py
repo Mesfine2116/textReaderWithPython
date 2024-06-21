@@ -47,6 +47,12 @@ def char_frequency(text_lines):
     char_count = Counter(text.replace(" ", ""))
     return char_count.most_common(5)
 
+def text_statistics(text_lines):
+    total_lines = len(text_lines)
+    total_words = sum(len(clean_text(line).split()) for line in text_lines)
+    total_characters = sum(len(line) for line in text_lines)
+    return total_lines, total_words, total_characters
+
 def list_text_files():
     return [f for f in os.listdir() if f.endswith('.txt')]
 
